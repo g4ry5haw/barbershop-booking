@@ -1,0 +1,33 @@
+{
+  "name": "barbershop-booking",
+  "version": "1.0.0",
+  "description": "An app for booking appointments with your local barber",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node listen.js",
+    "devStart": "nodemon listen.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g4ry5haw/barbershop-booking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g4ry5haw/barbershop-booking/issues"
+  },
+  "homepage": "https://github.com/g4ry5haw/barbershop-booking#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.3",
+    "stripe": "^11.6.0"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
+  }
+}

@@ -1,0 +1,40 @@
+# get summary count of available timeslots by day
+GET http://localhost:3000/api/appointments
+###
+
+# get list of all time slots for a specific day
+GET http://localhost:3000/api/appointments/2023-01-28
+###
+
+# get list of all users
+GET http://localhost:3000/api/users/
+###
+
+# update availability for a specific appointment (switch between unavailable 0 and available 1)
+PATCH  http://localhost:3000/api/appointments/63bbf7b328d77e64e59727c8
+Content-Type: application/json
+
+{"available": 0}
+
+###
+
+POST http://localhost:3000/api/users/
+Content-Type: application/json
+
+{
+    "firstName": "test1",
+    "lastName": "lastname",
+    "email": "test@yahoo.com",
+    "username": "nas2",
+    "password": "12345"
+}
+###
+
+POST http://localhost:3000/api/users/gs
+Content-Type: application/json
+
+{
+    "password": "password"
+}
+
+###
