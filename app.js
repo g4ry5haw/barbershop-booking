@@ -30,7 +30,7 @@ app.post("/api/users/:username", validateUser);
 app.post("/api/payment", stripePayment);
 
 app.use((req, res, next) => {
-  console.log("inside error");
+  console.log("inside error path not found");
   const err = new Error("path not found");
   err.status = 404;
   next(err);

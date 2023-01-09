@@ -131,8 +131,6 @@ const seedUsers = [
   },
 ];
 
-console.log(seedUsers);
-
 const seedDB = async () => {
   await Appointments.deleteMany({});
   await Users.deleteMany({});

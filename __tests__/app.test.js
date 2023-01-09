@@ -1,12 +1,11 @@
-const { ServerDescription } = require("mongodb");
+// const { ServerDescription } = require("mongodb");
 const request = require("supertest");
 const app = require("../app.js");
-const database = require("./connection");
-const seed = require("./seeds.js");
-const Appointments = require("./models/appointments");
+const database = require("../connection");
+const seed = require("../seeds");
+const Appointments = require("../models/appointments");
 
 beforeEach(() => {
-  // console.log(seed);
   return seed();
 });
 
@@ -20,7 +19,6 @@ describe("GET /api/appointments/", () => {
       .get("/api/appointments/")
       .expect(200)
       .then(({ body }) => {
-        // console.log(body);
         body.appointments.forEach((appointment) => {
           expect(appointment).toMatchObject({
             _id: expect.any(String),
@@ -142,12 +140,15 @@ describe("POST /api/users/:username", () => {
 
 describe("GET: /api/appointments/:date", () => {
   test("200: return all the slots for the passed date", () => {
+    // use today so the test can be ran at any point in the future without hard-coded dates causing th etest to fail
+    const today = new Date().toISOString().slice(0, 10);
+
     return request(app)
-      .get("/api/appointments/2022-12-24")
+      .get(`/api/appointments/${today}`)
       .expect(200)
       .then(({ body }) => {
         expect(body.appointments[0]).toMatchObject({
-          date: new Date("2022-12-24").toISOString(),
+          date: new Date(today).toISOString(),
           time: expect.any(String),
           _id: expect.any(String),
         });
@@ -194,7 +195,7 @@ describe("PATCH: /api/appintments/:appointment_id", () => {
   });
 });
 
-describe.only("POST: /api/payment", () => {
+describe("POST: /api/payment", () => {
   test("should return the client_secret id", () => {
     const user = {};
     return request(app)
