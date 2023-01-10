@@ -7,7 +7,6 @@
     "test": "jest",
     "start": "node listen.js",
     "devStart": "nodemon listen.js"
-    
   },
   "repository": {
     "type": "git",

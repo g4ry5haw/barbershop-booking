@@ -198,8 +198,9 @@ describe("PATCH: /api/appintments/:appointment_id", () => {
 describe("POST: /api/payment", () => {
   test("should return the client_secret id", () => {
     const user = {};
+    console.log(user, "payment test");
     return request(app)
-      .post("/api/payment")
+      .post("/api/payment/")
       .send(user)
       .expect(200)
       .then(({ body }) => {
