@@ -1,9 +1,9 @@
 // const { ServerDescription } = require("mongodb");
 const request = require("supertest");
-const app = require("../app.js");
-const database = require("../connection");
-const seed = require("../seeds");
-const Appointments = require("../models/appointments");
+const app = require("../../app.js");
+const database = require("../../connection");
+const seed = require("../../seeds");
+const Appointments = require("../../models/appointments");
 
 beforeEach(() => {
   return seed();

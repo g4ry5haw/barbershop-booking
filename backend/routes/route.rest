@@ -6,15 +6,22 @@ GET http://localhost:3000/api/appointments
 GET http://localhost:3000/api/appointments/2023-01-28
 ###
 
+# get list of all appointments for a user
+GET http://localhost:3000/api/appointments/booked/gs
+###
+
 # get list of all users
 GET http://localhost:3000/api/users/
 ###
 
 # update availability for a specific appointment (switch between unavailable 0 and available 1)
-PATCH  http://localhost:3000/api/appointments/63bbf7b328d77e64e59727c8
+PATCH  http://localhost:3000/api/appointments/63bd329544e4da789091b5a0
 Content-Type: application/json
 
-{"available": 0}
+{
+    "username": "gs",
+    "available": 0
+}
 
 ###
 

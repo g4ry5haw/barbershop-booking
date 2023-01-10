@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.get("/api/appointments", getAppointments);
 app.get("/api/appointments/:date", getAppointmentsByDate);
-app.get("/api/appointments/:username", getAppointmentsByUsername);
+app.get("/api/appointments/booked/:username", getAppointmentsByUsername);
 app.get("/api/users", getUsers);
 
 app.patch("/api/appointments/:appointment_id", patchAppointment);
